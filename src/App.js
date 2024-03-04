@@ -80,22 +80,6 @@ export default function App() {
     [location]
   );
 
-  useEffect(() => {
-    const handleChangeLocation = (e) => {
-      const newLocation = e.newValue;
-
-      if (newLocation !== location) {
-        setLocation(newLocation);
-      }
-    };
-
-    window.addEventListener('storage', handleChangeLocation);
-
-    return () => {
-      window.removeEventListener('storage', handleChangeLocation);
-    };
-  }, [setLocation, location]);
-
   return (
     <div className="app">
       <h1>Classy Weather</h1>
